@@ -1,0 +1,1 @@
+Get-NetFirewallRule -Direction Outbound 
