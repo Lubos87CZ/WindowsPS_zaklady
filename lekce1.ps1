@@ -34,7 +34,15 @@ $obj=[PSCustomObject]::new()
 
 $obj | Add-Member -MemberType NoteProperty -Name 'Jmeno' -Value 'Jirka'
 #do objektu $obj pridame vlastnost Jmeno, ktera bude obsahovat text "Jirka"
-$obj | Add-Member -MemberType ScriptMethod -Name 'NameToUpper' -Value {$this.Name.ToUpper()}
+$obj | Add-Member -MemberType ScriptMethod -Name 'NameToUpper' -Value {$this.'Jmeno'.ToUpper()}
 #do objektu $obj pridame metodu NameToUpper, ktera bude vracet obsah vlastnosti Jmeno prevedeny na velka pismena
-$obj | Get-Member
-#zobraz informace o objektu $obj, zobrazi vlastnost Jmeno a metodu NameToUpper 
+$obj.NameToUpper()
+$obj |Add-Member -MemberType NoteProperty -Name 'Jmeno' -Value 'Pepa' -Force
+#do objektu $obj zmenime obsah vlastnosti Jmeno na text "Pepa"
+"Nove jmeno je: $($obj.Jmeno)"
+#zobraz text "Nove jmeno je: " a obsah vlastnosti Jmeno, ktery je "Pepa", pouzijeme $() pro vlozeni hodnoty vlastnosti do textu
+
+Get-Service | Get-Member
+#zobraz informace o objektech, ktere vzniknou pri pouziti prikazu
+Get-Date | Get-Member
+#zobraz informace o objektu, ktery vznikne pri pouziti prikazu Get-Date

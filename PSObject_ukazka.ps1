@@ -20,4 +20,4 @@ $ComputerInfo | Add-Member -MemberType ScriptMethod -Name GetUptime -Value {(Get
 #do objektu $ComputerInfo pridame metodu GetUptime, ktera bude vracet cas, ktery uplynul od posledniho spusteni pocitace, vypocitame ho jako rozdil mezi aktualnim datem a datumem posledniho spusteni, ktery zjistime z objektu $OperatingSystem a prevedeme ho na datum pomocí metody ConvertToDateTime
 $ComputerInfo
 $ComputerInfo.GetUptime()
-#zobraz obsah objektu $ComputerInfo, zobrazi vsechny vlastnosti a jejich hodnoty, a zavolame metodu GetUptime, ktera nam vrati cas, ktery uplynul od posledniho spusteni pocitace
+#zobraz obsah objektu $ComputerInfo, zobrazi vsechny vlastnosti a jejich hodnoty, a zavolame metodu GetUptime, ktera nam vrati cas, ktery uplynul od posledniho spusteni pocita
